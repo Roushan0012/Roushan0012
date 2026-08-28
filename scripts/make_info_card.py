@@ -43,24 +43,24 @@ ACCENT = "#22d3ee"
 #    ("bul", text)          -> green dot + light bullet
 #    ("gap",)               -> a little vertical space
 # ===========================================================================
-HOST = "you"   # shown as  abhijeet@github  in the header
+HOST = "abhijeet"   # shown as  abhijeet@github  in the header
 
 ROWS = [
     ("host",),
-    ("kv", "Now", "Your current role @ Company"),
-    ("kv", "Prev", "Previous role @ Company"),
-    ("kv", "Also", "Another hat you wear"),
-    ("kv", "Edu", "Your degree, School 'YY"),
+    ("kv", "Now", "Full Stack Developer @Lean Protocol"),
+    ("kv", "Prev", "Full Stack Developer @DPC"),
+    ("kv", "Also", "TNP Coordinator"),
+    ("kv", "Edu", "B. Tech, IIITBH '27"),
     ("gap",),
     ("sec", "Stack"),
-    ("kv", "Frontend", "React, Next.js, TypeScript"),
-    ("kv", "Backend", "Node, Postgres, GraphQL"),
-    ("kv", "AI / ML", "LangChain, OpenAI, ..."),
-    ("kv", "Cloud", "AWS, Docker, Vercel"),
+    ("kv", "Front-End", "React.js, Next.js, TypeScript, Tailwind CSS."),
+    ("kv", "Back-End", "Node.js, Express.js, REST APIs, WebSockets."),
+    ("kv", "Databases", "PostgreSQL, MongoDB, Prisma."),
+    ("kv", "DevOps / Deployment", "Vercel, GitHub Actions, Docker, AWS."),
     ("gap",),
     ("sec", "Highlights"),
-    ("bul", "A thing you're proud of"),
-    ("bul", "Another highlight worth bragging about"),
+    ("bul", "Solved 500+ DSA problems in C++."),
+    ("bul", "IIIT Bhagalpur T&P Coordinator; +20% placement rate."),
 ]
 
 
@@ -116,8 +116,9 @@ for i, row in enumerate(ROWS):
                  f'stroke="{FRAME}" stroke-opacity="0.8"/>')
     elif kind == "kv":
         key, val = esc(row[1]), esc(row[2])
+        val_x = max(VAL_X, KEY_X + len(row[1]) * 8 + 8)
         inner = (f'<text x="{KEY_X}" y="{y:.1f}" fill="{KEY}" font-size="12.5" font-weight="700">{key}</text>'
-                 f'<text x="{VAL_X}" y="{y:.1f}" fill="{INK}" font-size="12.5">{val}</text>')
+                 f'<text x="{val_x}" y="{y:.1f}" fill="{INK}" font-size="12.5">{val}</text>')
     elif kind == "bul":
         txt = esc(row[1])
         inner = (f'<circle cx="{KEY_X+3}" cy="{y-4:.1f}" r="2.5" fill="{GREEN}"/>'

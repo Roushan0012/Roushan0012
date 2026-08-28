@@ -72,34 +72,69 @@
 
 ## 🚀 Projects
 
-**AsyncForge — Fault-Tolerant Event-Driven AI Task Processing System** <sub>Jul 2026</sub>
+**[InkSight](https://github.com/abhijeetmishra2104/InkSight) — AI Handwritten Exam Grader** <sub>Aug 2026</sub> · [Live Demo](https://inksight-sand.vercel.app/)
+- Built a four-stage vision pipeline (Next.js, TypeScript, Gemini) that extracts questions from a paper in printed order, reads a student's handwritten sheet, maps each answer to its question, then grades it with feedback.
+- Localized answers at the **line** level rather than the block level — unions of line boxes yield tight highlights and multi-page spans for free — with box repair that clamps, un-inverts and drops degenerate regions so a highlight never lands in the wrong place.
+- Ran a deterministic label pass (`Q7 (b)`, `11 (a)`, `Ans 3` → one canonical key) ahead of the model, pinning unambiguous markers as anchors the LLM may not contradict.
+
+
+**[Sidekick AI](https://github.com/abhijeetmishra2104/sideKickAI) — Self-Evaluating Autonomous Agent** <sub>Aug 2026</sub>
+- Built a LangGraph state machine pairing a Worker LLM with a separate Evaluator LLM that grades every response against a user-supplied success criterion and feeds structured feedback back into the worker until the task actually passes.
+- Wired real tools — Playwright browser control, search, Python execution, file and Notion access — behind the worker, with `MemorySaver` checkpointing session state across turns.
+- Bounded the loop with `MAX_ATTEMPTS` and a recursion limit so an unsatisfiable criterion fails fast instead of burning thousands of model calls.
+
+
+**[VitalSense](https://github.com/abhijeetmishra2104/vitalSense) — Multi-Parameter Patient Vitals Monitor** <sub>Aug 2026</sub>
+- Designed a thin-edge / smart-server split: an ESP32 handles timer-driven acquisition while streaming DSP (bandpass + notch + Pan-Tompkins QRS detection), vitals derivation and alarming run server-side in Node.js where they can be regression-tested.
+- Validated against cardiologist-annotated MIT-BIH recordings replayed at true 360 Hz in the device's own frame format — 75 bpm against the record's 75.3 bpm reference — so the whole pipeline runs with no hardware attached.
+- Shipped a Canvas dashboard and central station over WebSocket: beds ordered by worst active alarm, and a device that disappears stays on screen marked offline, because a vanishing tile looks exactly like a patient being fine.
+
+
+**[Decentralized Stablecoin (DSC)](https://github.com/abhijeetmishra2104/Decentralized-Stablecoin) — Overcollateralized Algorithmic Stablecoin** <sub>Jul 2026</sub>
+- Engineered a dollar-pegged, exogenously collateralized stablecoin in Solidity/Foundry — DAI without governance or fees — backed solely by WETH and WBTC.
+- Built `DSCEngine` as the mint/redeem/deposit/withdraw core with a 200% liquidation threshold and a health-factor check that reverts any action breaking a user's collateralization.
+- Priced collateral through Chainlink `AggregatorV3Interface` feeds, guarding state-changing paths with OpenZeppelin `ReentrancyGuard` and custom errors.
+
+
+**[Industrial Credit Risk Assessment System](https://github.com/abhijeetmishra2104/credit-risk-analysis) — Explainable ML Credit Scoring** <sub>Jul 2026</sub>
+- Built a scikit-learn loan-default model that converts predicted probability into a CIBIL-like credit score, then validates it against rule-based banking policy to produce a final lending decision.
+- Made every decision auditable with SHAP waterfall explanations attributing the outcome to individual applicant features — the part that makes an ML credit model usable in a regulated setting.
+- Shipped an interactive Streamlit dashboard with SQLite assessment history and generated PDF credit reports.
+
+
+**[AsyncForge](https://github.com/abhijeetmishra2104/asyncForge) — Fault-Tolerant Event-Driven AI Task Processing System** <sub>Jul 2026</sub>
 - Engineered a fault-tolerant, event-driven asynchronous backend (Next.js, TypeScript, RabbitMQ, PostgreSQL, Prisma) absorbing 500+ concurrent jobs and collapsing API response time from 12 s to 35 ms — a 340× speedup.
 - Designed distributed Dispatcher and Worker microservices sustaining 150+ jobs/minute, using idempotent processing and RabbitMQ Publisher Confirms for reliable delivery across 2 service tiers.
 - Implemented bounded retries and the Competing Consumers pattern, validated against 1,000+ simulated failures — throughput scales linearly with each added worker.
 - Containerized every service with Docker on a local Kubernetes (kind) cluster with health checks and Prometheus/Grafana observability, cutting batch execution time 66%.
 
-**SonicScribe — Full-Stack Audio Intelligence Platform (LLM/NLP)** <sub>Jun 2025</sub>
-- Delivered a production-ready medical audio analysis platform (Next.js frontend, Python Flask REST backend) integrating OpenAI Whisper API and LangChain to process 1,000+ audio files at 95% reliability.
-- Streamlined secure REST APIs for direct file uploads and Cloudinary URLs with PostgreSQL persistence, cutting backend crashes 40% and improving data processing speed 25%.
-- Automated zero-touch CI/CD across 2 environments (Heroku backend, Vercel frontend) with GitHub Actions, reducing manual deployment time 90%.
-- Migrated large model assets out of the Dockerized Flask image to external storage, eliminating 100% of build failures and improving deployment portability.
-
-**Provably Fair Smart Contract Lottery** <sub>Jun 2026</sub>
-- Engineered a decentralized lottery in Solidity + Chainlink VRF v2.5 with cryptographically secure, autonomous winner selection.
-- Built a Foundry test suite (unit, stress, gas benchmarks) validated under 1,000+ concurrent users; cut transaction costs 18% via gas optimization.
 
 **ERC-721 NFT Implementations** <sub>Jul 2026</sub>
 - Deployed two NFT architectures in Solidity/Foundry — one with IPFS off-chain metadata, one fully on-chain with dynamic, Base64-encoded SVG metadata.
 - Built a dynamic Mood NFT with mutable on-chain state, letting the metadata and artwork flip between Happy and Sad via contract calls.
 - Explored EVM-level encoding (`abi.encode`, `abi.decode`, `abi.encodePacked`, function selectors, calldata, low-level calls) on Anvil and Sepolia.
 
-**Medium — Feature-Rich Blogging Platform** <sub>Sep 2024</sub>
-- Built a full-stack blogging app (React, TypeScript, Tailwind) with JWT auth, deployed frontend on Vercel + backend on Cloudflare Workers at 99.9% uptime.
-- Published a reusable npm package standardizing input validation across modules, cutting validation errors by 30%.
 
 **ERC-20 From Scratch** <sub>Jul 2026</sub>
 - Implemented a simplified ERC-20 token in Solidity — balances, transfers, supply tracking, decimals — to internalize the EIP-20 spec.
 - Automated build/test/deploy with a Foundry + Makefile workflow; deployed and verified on Sepolia via Etherscan.
+
+**Provably Fair Smart Contract Lottery** <sub>Jun 2026</sub>
+- Engineered a decentralized lottery in Solidity + Chainlink VRF v2.5 with cryptographically secure, autonomous winner selection.
+- Built a Foundry test suite (unit, stress, gas benchmarks) validated under 1,000+ concurrent users; cut transaction costs 18% via gas optimization.
+
+
+**[SonicScribe](https://github.com/abhijeetmishra2104/sonicscribe-web) — Full-Stack Audio Intelligence Platform (LLM/NLP)** <sub>Jun 2025</sub> · [Live Demo](https://sonicscribe-web.vercel.app)
+- Delivered a production-ready medical audio analysis platform (Next.js frontend, Python Flask REST backend) integrating OpenAI Whisper API and LangChain to process 1,000+ audio files at 95% reliability.
+- Streamlined secure REST APIs for direct file uploads and Cloudinary URLs with PostgreSQL persistence, cutting backend crashes 40% and improving data processing speed 25%.
+- Automated zero-touch CI/CD across 2 environments (Heroku backend, Vercel frontend) with GitHub Actions, reducing manual deployment time 90%.
+- Migrated large model assets out of the Dockerized Flask image to external storage, eliminating 100% of build failures and improving deployment portability.
+
+
+**Medium — Feature-Rich Blogging Platform** <sub>Sep 2024</sub>
+- Built a full-stack blogging app (React, TypeScript, Tailwind) with JWT auth, deployed frontend on Vercel + backend on Cloudflare Workers at 99.9% uptime.
+- Published a reusable npm package standardizing input validation across modules, cutting validation errors by 30%.
+
 
 ---
 
