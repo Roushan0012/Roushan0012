@@ -102,7 +102,7 @@
 - Shipped an interactive Streamlit dashboard with SQLite assessment history and generated PDF credit reports.
 
 
-**[AsyncForge](https://github.com/abhijeetmishra2104/asyncForge) — Fault-Tolerant Event-Driven AI Task Processing System** <sub>Jul 2026</sub>
+**[AsyncForge](https://github.com/abhijeetmishra2104/asyncForge) — Fault-Tolerant Event-Driven AI Task Processing System** <sub>Jul 2026</sub> · [Live Demo](https://asyncforge.onrender.com/)
 - Engineered a fault-tolerant, event-driven asynchronous backend (Next.js, TypeScript, RabbitMQ, PostgreSQL, Prisma) absorbing 500+ concurrent jobs and collapsing API response time from 12 s to 35 ms — a 340× speedup.
 - Designed distributed Dispatcher and Worker microservices sustaining 150+ jobs/minute, using idempotent processing and RabbitMQ Publisher Confirms for reliable delivery across 2 service tiers.
 - Implemented bounded retries and the Competing Consumers pattern, validated against 1,000+ simulated failures — throughput scales linearly with each added worker.
@@ -203,6 +203,16 @@
   <img src="https://img.shields.io/badge/WebRTC-333333?style=for-the-badge&logo=webrtc&logoColor=white" alt="WebRTC" />
   <img src="https://img.shields.io/badge/Cloudflare_Workers-F38020?style=for-the-badge&logo=cloudflareworkers&logoColor=white" alt="Cloudflare Workers" />
 </p>
+
+---
+
+## 🏅 Achievements
+
+- 🧩 Solved **500+ Data Structures & Algorithms problems** in C++ — [Codolio profile](https://codolio.com/profile/abhijeetmishra).
+- 🥉 Placed **5th at Jaipur Cybrathon 2026** — top 10% of the field.
+- 🏫 **Top-15** at IIIT Bhagalpur's Smart India Hackathon internal round.
+- 🎓 **Training & Placement Coordinator, Batch '27** — coordinated placements for 300+ students, driving a 20% increase in placement rate and a 15% improvement in average package.
+- 🧑‍🏫 **Student Mentor & Web Team Lead, Adhyaay** — led a 6-member team and mentored 20+ students, cutting administrative effort 50% and lifting engagement 30%.
 
 ---
 
