@@ -70,7 +70,7 @@ python scripts/make_info_card.py
 ```
 If you want to tweak wording later, edit the `ROWS` list at the top of
 `scripts/make_info_card.py` and re-run. If it overflows the card, bump `H`
-(currently `430`) at the top of the script.
+(currently `376`) at the top of the script.
 
 ## 5. Contribution graph
 ```bash
