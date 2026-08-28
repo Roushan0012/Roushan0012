@@ -124,7 +124,7 @@
 - Built a Foundry test suite (unit, stress, gas benchmarks) validated under 1,000+ concurrent users; cut transaction costs 18% via gas optimization.
 
 
-**[SonicScribe](https://github.com/abhijeetmishra2104/sonicscribe-web) — Full-Stack Audio Intelligence Platform (LLM/NLP)** <sub>Jun 2025</sub> · [Live Demo](https://sonicscribe-web.vercel.app)
+**[SonicScribe](https://github.com/abhijeetmishra2104/SonicScribe) — Full-Stack Audio Intelligence Platform (LLM/NLP)** <sub>Jun 2025</sub> · [Live Demo](https://sonicscribe-web.vercel.app)
 - Delivered a production-ready medical audio analysis platform (Next.js frontend, Python Flask REST backend) integrating OpenAI Whisper API and LangChain to process 1,000+ audio files at 95% reliability.
 - Streamlined secure REST APIs for direct file uploads and Cloudinary URLs with PostgreSQL persistence, cutting backend crashes 40% and improving data processing speed 25%.
 - Automated zero-touch CI/CD across 2 environments (Heroku backend, Vercel frontend) with GitHub Actions, reducing manual deployment time 90%.
