@@ -38,7 +38,8 @@
 ## 🚀 About Me
 
 - 🎓 Pursuing B.Tech in Electronics and Communication Engineering at IIIT Bhagalpur with a CGPA of 8.93/10.00.
-- 💼 Currently acting as Training and Placement Coordinator for Batch '27.
+- 💻 Building a GLP-1 healthcare platform as a Full-Stack Developer at **Lean Protocol** — 4 production apps (React Native + Next.js) on a Node.js/TypeScript modular monolith.
+- 💼 Also acting as Training and Placement Coordinator for Batch '27.
 - 🌐 Experienced in Full-Stack Web Development, optimizing RESTful APIs, and achieving 99.9% backend uptime.
 - 🔗 Passionate about Web3, building provably fair smart contracts with Solidity and Chainlink VRF v2.5.
 - 📧 Reach me at: **abhijeetmishra2104@gmail.com**
@@ -47,15 +48,21 @@
 
 ## 💼 Experience
 
+**Full-Stack Developer (Remote)** — Lean Protocol
+<sub>Aug 2026 – Present</sub>
+- Architected a GLP-1 obesity-management healthcare platform spanning 4 production apps — patient & physician React Native apps plus nutritionist and admin Next.js dashboards — on a Node.js/TypeScript modular-monolith backend, owning the full stack as 1 of 2 engineers.
+- Modeled 6 longitudinal clinical domains in PostgreSQL (weight, medications, diet plans, lab reports, surveys, consultations), retaining 100% of historical records via immutable writes and audit logging to seed future risk-scoring models.
+- Secured 4 role-based access tiers behind centralized auth, authorization and validation — medical documents on Cloudflare R2, Redis-cached sessions across all 4 clients.
+- Consolidated the 4 apps into a single Turborepo/pnpm monorepo with shared types, validation schemas and API contracts, collapsing duplicated definitions to 1 source of truth and keeping 2 engineers shipping in parallel via Docker + GitHub Actions CI/CD.
+
 **Training & Placement Coordinator** — Indian Institute of Information Technology, Bhagalpur
 <sub>Jan 2025 – Present</sub>
 - Orchestrated placement activities for 300+ students, streamlining recruitment workflows and communication — driving a 20% increase in placement rates and a 15% improvement in salary packages.
 
-**Full-Stack Web Development Intern** — Digital Prospects Consulting
+**Full-Stack Web Development Intern (Remote)** — Digital Prospects Consulting
 <sub>May 2025 – Jul 2025</sub>
-- Built and optimized RESTful APIs with Node.js, Express, and MySQL, boosting query efficiency by 35% and holding 99.9% backend uptime.
-- Integrated Redis caching, cutting API response times by 45% and enabling seamless scaling under peak traffic.
-- Standardized Git branching and peer-review workflows, reducing integration issues by 15% and resolving key production crashes.
+- Optimized REST API endpoints in Node.js and Express.js backed by MySQL with Redis caching, cutting average latency 45% and sustaining 99.9% uptime in production.
+- Hardened release quality through peer code reviews and a defined Git branching strategy, resolving critical production crashes and reducing integration issues 15%.
 
 **Student Mentor** — Adhyaay, IIIT Bhagalpur
 <sub>Aug 2024 – Apr 2025</sub>
@@ -65,10 +72,17 @@
 
 ## 🚀 Projects
 
-**SonicScribe — Full-Stack Audio Intelligence Platform** <sub>Jun 2025</sub>
-- Architected a production-ready medical audio analysis platform (Next.js, Tailwind, Flask) integrated with Whisper API and LangChain, processing 1,000+ audio files at 95% API reliability.
-- Built secure REST APIs for direct uploads and Cloudinary URLs, cutting backend crashes by 40% and boosting processing speed by 25%.
-- Shipped CI/CD via GitHub Actions to Heroku + Vercel and Dockerized the Flask backend, eliminating 100% of build failures.
+**AsyncForge — Fault-Tolerant Event-Driven AI Task Processing System** <sub>Jul 2026</sub>
+- Engineered a fault-tolerant, event-driven asynchronous backend (Next.js, TypeScript, RabbitMQ, PostgreSQL, Prisma) absorbing 500+ concurrent jobs and collapsing API response time from 12 s to 35 ms — a 340× speedup.
+- Designed distributed Dispatcher and Worker microservices sustaining 150+ jobs/minute, using idempotent processing and RabbitMQ Publisher Confirms for reliable delivery across 2 service tiers.
+- Implemented bounded retries and the Competing Consumers pattern, validated against 1,000+ simulated failures — throughput scales linearly with each added worker.
+- Containerized every service with Docker on a local Kubernetes (kind) cluster with health checks and Prometheus/Grafana observability, cutting batch execution time 66%.
+
+**SonicScribe — Full-Stack Audio Intelligence Platform (LLM/NLP)** <sub>Jun 2025</sub>
+- Delivered a production-ready medical audio analysis platform (Next.js frontend, Python Flask REST backend) integrating OpenAI Whisper API and LangChain to process 1,000+ audio files at 95% reliability.
+- Streamlined secure REST APIs for direct file uploads and Cloudinary URLs with PostgreSQL persistence, cutting backend crashes 40% and improving data processing speed 25%.
+- Automated zero-touch CI/CD across 2 environments (Heroku backend, Vercel frontend) with GitHub Actions, reducing manual deployment time 90%.
+- Migrated large model assets out of the Dockerized Flask image to external storage, eliminating 100% of build failures and improving deployment portability.
 
 **Provably Fair Smart Contract Lottery** <sub>Jun 2026</sub>
 - Engineered a decentralized lottery in Solidity + Chainlink VRF v2.5 with cryptographically secure, autonomous winner selection.
@@ -97,17 +111,20 @@
 
 <p align="center"><sub>Languages</sub></p>
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=js,ts,solidity,cpp" alt="languages" />
+  <img src="https://skillicons.dev/icons?i=js,ts,python,solidity,cpp" alt="languages" />
 </p>
 
 <p align="center"><sub>Frontend</sub></p>
 <p align="center">
   <img src="https://skillicons.dev/icons?i=react,nextjs,tailwind" alt="frontend" />
+  <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Native" />
+  <img src="https://img.shields.io/badge/Turborepo-EF4444?style=for-the-badge&logo=turborepo&logoColor=white" alt="Turborepo" />
+  <img src="https://img.shields.io/badge/pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=white" alt="pnpm" />
 </p>
 
 <p align="center"><sub>Backend</sub></p>
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=nodejs,express" alt="backend" />
+  <img src="https://skillicons.dev/icons?i=nodejs,express,flask" alt="backend" />
 </p>
 
 <p align="center"><sub>Databases</sub></p>
