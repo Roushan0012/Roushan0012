@@ -1,12 +1,12 @@
 <!-- 🏁 Custom Banner -->
 <p align="center">
   <a href="https://github.com/abhijeetmishra2104">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&vCenter=true&width=600&lines=Full-Stack+Developer+%7C+Web3+Enthusiast;ECE+Undergrad+%40+IIIT+Bhagalpur+%F0%9F%8E%93;Building+Scalable+Systems+%E2%9A%99%EF%B8%8F" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&vCenter=true&width=600&lines=Full-Stack+Developer+%40+Lean+Protocol;Web3+Builder+%7C+Solidity+%2B+Foundry;ECE+Undergrad+%40+IIIT+Bhagalpur+%F0%9F%8E%93;Building+Scalable+Systems+%E2%9A%99%EF%B8%8F" alt="Typing SVG" />
   </a>
 </p>
 
 <h1 align="center">Hi 👋, I'm Abhijeet Mishra</h1>
-<h3 align="center">A passionate Full-Stack & Web3 Developer</h3>
+<h3 align="center">Full-Stack Developer @ Lean Protocol &middot; Web3 &amp; Blockchain Builder</h3>
 
 <p align="center">
   <a href="https://portfolio-gamma-coral-23.vercel.app/">Portfolio</a> ·
@@ -141,7 +141,7 @@
 ## 🧰 Tech Arsenal
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=18&pause=1000&center=true&vCenter=true&width=520&lines=Full-Stack+Developer;Web3+%2F+Blockchain+Builder;ECE+%40+IIIT+Bhagalpur" alt="typing banner" />
+  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=18&pause=1000&center=true&vCenter=true&width=520&lines=Full-Stack+Developer+%40+Lean+Protocol;Web3+%2F+Blockchain+Builder;ECE+%40+IIIT+Bhagalpur" alt="typing banner" />
 </p>
 
 <p align="center"><sub>Languages</sub></p>
