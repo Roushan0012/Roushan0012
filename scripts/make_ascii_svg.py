@@ -1,16 +1,8 @@
 """
-Convert a portrait photo into a CLEAN, monochrome ASCII-art SVG (Andrew6rant
-style: one light-gray color, subject isolated on a dark background) that "types"
-itself in like a terminal, then holds.
+Convert Roushan's portrait photo into a clean monochrome ASCII-art SVG
+that types itself in like a terminal, then holds.
 
-Monochrome is deliberate -- per-character rainbow color is what makes ASCII
-portraits look noisy. One fill color + a good density ramp + high contrast (so a
-busy background washes out to blank) reads as neat and legible.
-
-GitHub renders SVGs embedded via <img> and runs their SMIL animations there (JS
-does not run). Each row is revealed with a left-to-right clip wipe plus a small
-block cursor riding the wipe edge, staggered top -> bottom, so the whole
-portrait prints once and freezes.
+Output: avi-ascii.svg (or roushan-ascii.svg)
 """
 from PIL import Image, ImageEnhance, ImageOps, ImageFilter
 import html
@@ -18,24 +10,20 @@ import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-# defaults to the prepped grayscale image (see prep_photo.py), which already has
-# the background removed + local contrast applied.
 SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "..", "source-prepped.png")
 OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, "..", "avi-ascii.svg")
 
-COLS = 100
-ROWS = 53
+COLS = 96
+ROWS = 52
 CELL_W = 8
 CELL_H = 15
 RAMP = " .`:-=+*cs#%@"  # bright(sparse) -> dark(dense); leading space clears bg
 
-# the prepped image already has bg removed + CLAHE local contrast, so only
-# light global tuning is needed here.
-CONTRAST = 1.05
-BRIGHTNESS = 1.0
-GAMMA = 1.18          # >1 brightens mids -> face lands in sparser chars
-SHARPEN = False
-WHITE_FLOOR = 0.80    # luminance above this is forced to blank (space)
+CONTRAST = 1.15
+BRIGHTNESS = 1.02
+GAMMA = 1.12
+SHARPEN = True
+WHITE_FLOOR = 0.82
 
 PAD = 20
 TITLEBAR_H = 30
@@ -49,15 +37,14 @@ BG = "#0d1117"
 BG2 = "#111722"
 FRAME = "#30363d"
 TITLE_TEXT = "#7d8590"
-INK = "#c9d1d9"      # the single ascii color (matches Andrew6rant)
+INK = "#c9d1d9"
 CURSOR = "#c9d1d9"
 
-# ---- reveal timing (one-shot; a cursor rasters top -> bottom) -------------
-ROW_DUR = 0.11
-STAGGER = 0.11       # == ROW_DUR -> a single cursor sweeping down
+# reveal timing
+ROW_DUR = 0.10
+STAGGER = 0.09
 
-# ---- 1. sample the image into a COLS x ROWS grayscale grid ----------------
-im = Image.open(SRC).convert("L")               # grayscale
+im = Image.open(SRC).convert("L")
 if SHARPEN:
     im = im.filter(ImageFilter.UnsharpMask(radius=2, percent=140, threshold=2))
 im = ImageEnhance.Brightness(im).enhance(BRIGHTNESS)
@@ -65,7 +52,7 @@ im = ImageEnhance.Contrast(im).enhance(CONTRAST)
 im = im.resize((COLS, ROWS), Image.LANCZOS)
 px = im.load()
 
-STATIC = bool(os.environ.get("STATIC"))  # emit frozen state for previews
+STATIC = bool(os.environ.get("STATIC"))
 
 rows_txt = []
 for y in range(ROWS):
@@ -83,7 +70,6 @@ for y in range(ROWS):
 
 art_top = TITLEBAR_H + PAD * 0.35
 
-# ---- 2. assemble SVG ------------------------------------------------------
 parts = []
 parts.append(
     f'<svg xmlns="http://www.w3.org/2000/svg" width="{CANVAS_W}" height="{CANVAS_H}" '
@@ -103,9 +89,8 @@ parts.append(f'<line x1="0" y1="{TITLEBAR_H}" x2="{CANVAS_W}" y2="{TITLEBAR_H}" 
 for i, dotcol in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
     parts.append(f'<circle cx="{PAD + i*16}" cy="{TITLEBAR_H/2}" r="5" fill="{dotcol}"/>')
 parts.append(f'<text x="{CANVAS_W/2}" y="{TITLEBAR_H/2 + 4}" fill="{TITLE_TEXT}" font-size="12" '
-             f'text-anchor="middle">abhijeet@github: ~$ ./portrait.sh</text>')
+             f'text-anchor="middle">roushan@github: ~$ ./portrait.sh</text>')
 
-# one <text> per row (single color -> no per-char markup, tiny file)
 font_size = CELL_H * 0.86
 for ry, line in enumerate(rows_txt):
     y = art_top + ry * CELL_H + CELL_H * 0.74
@@ -133,13 +118,13 @@ for ry, line in enumerate(rows_txt):
         f'<set attributeName="opacity" to="0" begin="{delay+ROW_DUR:.3f}s"/></rect>'
     )
 
-# status bar with a steady blinking cursor
+# status bar with blinking cursor
 status_line_y = TITLEBAR_H + ART_H + PAD * 0.35
 status_y = status_line_y + 19
 parts.append(f'<line x1="0" y1="{status_line_y:.1f}" x2="{CANVAS_W}" y2="{status_line_y:.1f}" stroke="{FRAME}"/>')
 parts.append(f'<text x="{PAD}" y="{status_y:.1f}" fill="{TITLE_TEXT}" font-size="13">'
-             f'abhjeet@github:~$ whoami <tspan fill="{INK}">Abhijeet Mishra</tspan></text>')
-parts.append(f'<rect x="{PAD+196}" y="{status_y-12:.1f}" width="8" height="14" fill="{INK}">'
+             f'roushan@github:~$ whoami <tspan fill="{INK}">Roushan Kumar</tspan></text>')
+parts.append(f'<rect x="{PAD+204}" y="{status_y-12:.1f}" width="8" height="14" fill="{INK}">'
              f'<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.51;1" '
              f'dur="1s" repeatCount="indefinite"/></rect>')
 

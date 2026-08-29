@@ -15,12 +15,19 @@
   <a href="mailto:kashyaproushankumar@gmail.com">Personal Email</a>
 </p>
 
-<p align="center">
-  <img src="./info-card.svg" width="500" alt="Info card" />
-</p>
+<table>
+<tr>
+<td width="370" valign="top">
+  <img src="./avi-ascii.svg" width="370" alt="Roushan ASCII Portrait" />
+</td>
+<td width="490" valign="top">
+  <img src="./info-card.svg" width="490" alt="Info Card" />
+</td>
+</tr>
+</table>
 
 <p align="center">
-  <img src="./contrib-heatmap.svg" width="100%" alt="Contribution heatmap" />
+  <img src="./contrib-heatmap.svg" width="100%" alt="Contribution Heatmap" />
 </p>
 
 <p align="center"><sub>Contribution graph refreshes daily via GitHub Actions — no token, no auth.</sub></p>
@@ -149,5 +156,5 @@
 ## 📜 Certifications
 
 - 🏆 **ServiceNow Certified System Administrator (CSA)** — ServiceNow *(Jun 2026)*
-- 🏆 **Certified Application Developer (CAD)** — ServiceNow *(Jun 2026)*
+- 🏆 **ServiceNow Certified Application Developer (CAD)** — ServiceNow *(Jun 2026)*
 - 🤖 **Supervised Machine Learning: Regression and Classification** — DeepLearning.AI / Andrew Ng on Coursera *(May 2024)*
