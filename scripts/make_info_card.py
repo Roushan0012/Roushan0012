@@ -1,6 +1,6 @@
 """
 Build a neofetch-style info card SVG (Andrew6rant style) to sit to the RIGHT of
-the ASCII portrait: colored key/value rows for work experience, tech stack, and
+the ASCII portrait / profile header: colored key/value rows for work experience, tech stack, and
 highlights -- NOT GitHub stats (the contribution graph covers those).
 
 Static content, hand-authored below. Lines fade/slide in on a short stagger so
@@ -14,11 +14,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "info-card.svg")
 STATIC = bool(os.environ.get("STATIC"))
 
-W, H = 480, 376
+W, H = 500, 390
 PAD = 20
 TITLEBAR_H = 30
 KEY_X = PAD
-VAL_X = PAD + 92
+VAL_X = PAD + 98
 LINE_H = 20.5
 
 BG = "#0d1117"
@@ -26,41 +26,41 @@ BG2 = "#111722"
 FRAME = "#30363d"
 MUTED = "#7d8590"
 INK = "#c9d1d9"
-KEY = "#ffa657"      # orange keys (matches Andrew)
+KEY = "#ffa657"      # orange keys
 SECTION = "#58a6ff"  # blue section headers
 GREEN = "#3fb950"
 ACCENT = "#22d3ee"
 
 # ===========================================================================
-#  EDIT THIS  -- your info panel. It re-lays-out automatically; if it gets too
-#  tall for the card, bump H above (and the width= in your profile README).
+#  EDIT THIS  -- Roushan Kumar's info panel.
 #  The username in the header is HOST below.
 #
 #  row types:
-#    ("host",)              -> "abhijeet@github" header + rule
+#    ("host",)              -> "roushan@github" header + rule
 #    ("kv", key, value)     -> orange key + light value
 #    ("sec", title)         -> blue "— title —" section rule
 #    ("bul", text)          -> green dot + light bullet
 #    ("gap",)               -> a little vertical space
 # ===========================================================================
-HOST = "abhijeet"   # shown as  abhijeet@github  in the header
+HOST = "roushan"   # shown as roushan@github in the header
 
 ROWS = [
     ("host",),
-    ("kv", "Now", "Full Stack Developer @Lean Protocol"),
-    ("kv", "Prev", "Web Developer Intern @DPC"),
-    ("kv", "Also", "TNP Coordinator"),
-    ("kv", "Edu", "B. Tech, IIITBH '27"),
+    ("kv", "Role", "AI/ML & Agentic LLM Engineer"),
+    ("kv", "Prev", "AI Developer Intern @ AI Ally"),
+    ("kv", "Edu", "B.Tech CSE, IIIT Bhagalpur '27"),
+    ("kv", "Focus", "Generative AI, RAG & LangGraph"),
     ("gap",),
     ("sec", "Stack"),
-    ("kv", "Front-End", "React.js, Next.js, TypeScript, Tailwind CSS."),
-    ("kv", "Back-End", "Node.js, Express.js, REST APIs, WebSockets."),
-    ("kv", "Databases", "PostgreSQL, MongoDB, Prisma."),
-    ("kv", "DevOps / Deployment", "Vercel, GitHub Actions, Docker, AWS."),
+    ("kv", "AI / LLMs", "LangChain, LangGraph, FAISS, PyTorch, RAG."),
+    ("kv", "Back-End", "Python (FastAPI, Flask), Node.js, REST APIs."),
+    ("kv", "Front-End", "React, Next.js, TypeScript, Tailwind CSS."),
+    ("kv", "DevOps/DB", "Docker, AWS, PostgreSQL, Supabase, Git CI/CD."),
     ("gap",),
     ("sec", "Highlights"),
-    ("bul", "Solved 500+ DSA problems in C++."),
-    ("bul", "IIIT Bhagalpur T&P Coordinator; +20% placement rate."),
+    ("bul", "Solved 400+ DSA on LeetCode & 300+ CP problems."),
+    ("bul", "2nd Rank @ IDEA-ONE ICMR Health Hackathon."),
+    ("bul", "Finalist @ AI HealthTech National Grand Finale."),
 ]
 
 
