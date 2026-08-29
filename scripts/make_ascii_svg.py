@@ -1,8 +1,8 @@
 """
 Convert Roushan's portrait photo into a clean monochrome ASCII-art SVG
-that types itself in like a terminal, then holds.
+with precise facial feature extraction that types itself in like a terminal.
 
-Output: avi-ascii.svg (or roushan-ascii.svg)
+Output: avi-ascii.svg (and roushan-ascii.svg)
 """
 from PIL import Image, ImageEnhance, ImageOps, ImageFilter
 import html
@@ -13,17 +13,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "..", "source-prepped.png")
 OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, "..", "avi-ascii.svg")
 
-COLS = 96
-ROWS = 52
-CELL_W = 8
-CELL_H = 15
-RAMP = " .`:-=+*cs#%@"  # bright(sparse) -> dark(dense); leading space clears bg
-
-CONTRAST = 1.15
-BRIGHTNESS = 1.02
-GAMMA = 1.12
-SHARPEN = True
-WHITE_FLOOR = 0.82
+COLS = 84
+ROWS = 50
+CELL_W = 9.2
+CELL_H = 15.5
+RAMP = " .:-=+*cs#%@"
 
 PAD = 20
 TITLEBAR_H = 30
@@ -41,14 +35,10 @@ INK = "#c9d1d9"
 CURSOR = "#c9d1d9"
 
 # reveal timing
-ROW_DUR = 0.10
-STAGGER = 0.09
+ROW_DUR = 0.08
+STAGGER = 0.07
 
 im = Image.open(SRC).convert("L")
-if SHARPEN:
-    im = im.filter(ImageFilter.UnsharpMask(radius=2, percent=140, threshold=2))
-im = ImageEnhance.Brightness(im).enhance(BRIGHTNESS)
-im = ImageEnhance.Contrast(im).enhance(CONTRAST)
 im = im.resize((COLS, ROWS), Image.LANCZOS)
 px = im.load()
 
@@ -59,8 +49,7 @@ for y in range(ROWS):
     chars = []
     for x in range(COLS):
         lum = px[x, y] / 255.0
-        lum = pow(lum, GAMMA)
-        if lum >= WHITE_FLOOR:
+        if lum >= 0.86:
             chars.append(" ")
             continue
         idx = int((1.0 - lum) * (len(RAMP) - 1) + 0.5)
@@ -123,7 +112,7 @@ status_line_y = TITLEBAR_H + ART_H + PAD * 0.35
 status_y = status_line_y + 19
 parts.append(f'<line x1="0" y1="{status_line_y:.1f}" x2="{CANVAS_W}" y2="{status_line_y:.1f}" stroke="{FRAME}"/>')
 parts.append(f'<text x="{PAD}" y="{status_y:.1f}" fill="{TITLE_TEXT}" font-size="13">'
-             f'roushan@github:~$ whoami <tspan fill="{INK}">Roushan Kumar</tspan></text>')
+             f'roushan@github:~$ whoami <tspan fill="{INK}" font-weight="700">Roushan Kumar</tspan></text>')
 parts.append(f'<rect x="{PAD+204}" y="{status_y-12:.1f}" width="8" height="14" fill="{INK}">'
              f'<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.51;1" '
              f'dur="1s" repeatCount="indefinite"/></rect>')
