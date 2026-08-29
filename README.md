@@ -188,6 +188,6 @@
 
 ## 📜 Certifications
 
-- 🏆 **ServiceNow Certified System Administrator (CSA)** — ServiceNow *(Jun 2026)*
-- 🏆 **ServiceNow Certified Application Developer (CAD)** — ServiceNow *(Jun 2026)*
-- 🤖 **Supervised Machine Learning: Regression and Classification** — DeepLearning.AI / Andrew Ng on Coursera *(May 2024)*
+- 🏆 **[ServiceNow Certified System Administrator (CSA)](https://drive.google.com/file/d/1zgu1fWIefupbjgT5I3sYh-LvcTXdSrNz/view?usp=sharing)** — ServiceNow *(Jun 2026)*
+- 🏆 **[ServiceNow Certified Application Developer (CAD)](https://drive.google.com/file/d/1CUhZ4izaVdMCxBy1Tw9_4JJy0Z9BJ48S/view?usp=sharing)** — ServiceNow *(Jun 2026)*
+- 🤖 **[Supervised Machine Learning: Regression and Classification](https://www.linkedin.com/posts/roushan-kumar-b7b7a9296_im-happy-to-share-that-ive-obtained-a-new-activity-7184570050266169344-xqfl?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEeqIU8BD8tZT_GA88GxUVQie7URhPk2xR8)** — DeepLearning.AI / Andrew Ng on Coursera *(May 2024)*
