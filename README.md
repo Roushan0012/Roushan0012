@@ -57,7 +57,7 @@
 
 ## 🚀 Featured Projects
 
-### 🧠 1. **[PDF RAG Intelligence Platform (CognitRAG.ai)](https://github.com/Roushan0012/CognitRAG.ai)**
+### 📄 1. **[PDF RAG Intelligence Platform](https://github.com/Roushan0012)**
 `Python` · `Flask` · `React` · `FAISS` · `BM25` · `Hugging Face` · `Groq`
 - Built a **6-stage hybrid retrieval pipeline** pairing 384-dimensional FAISS dense vectors with BM25 sparse search, fusing both top-15 rankings through Reciprocal Rank Fusion at $k=60$ to maximize recall.
 - Optimized ranking precision with a **MiniLM cross-encoder reranker** that narrows 15 fused candidates to 5, resolving 300-character child chunks to 1200-character parents for full generation context.
@@ -94,7 +94,14 @@
 
 ---
 
-### 🔥 6. **[Forest Weather Index (FWI) Prediction](https://github.com/Roushan0012/Forest_Weather_Index_Prediction)**
+### 🧠 6. **[CognitRAG.ai — Enterprise PDF Hybrid RAG Platform](https://github.com/Roushan0012/CognitRAG.ai)**
+`Python` · `Flask` · `React 18` · `FAISS` · `BM25Okapi` · `Hugging Face (MiniLM)` · `Groq LPU` · `SSE Streaming`
+- Enterprise-grade document intelligence platform featuring automated parent-child chunking, dual dense/sparse hybrid search, and cross-attention reranking.
+- Features multi-session indexing, citations with per-passage relevance scoring, and low-latency token streaming powered by Groq LPU inference.
+
+---
+
+### 🔥 7. **[Forest Weather Index (FWI) Prediction](https://github.com/Roushan0012/Forest_Weather_Index_Prediction)**
 `Python` · `Flask` · `Scikit-learn` · `Pandas` · `NumPy` · `Ridge/Lasso Regression` · `AWS Elastic Beanstalk`
 - Developed an end-to-end machine learning pipeline analyzing meteorological indices (FFMC, DMC, DC, ISI, BUI) from the Algerian Forest Fires dataset to predict Fire Weather Index values.
 - Conducted exploratory data analysis, correlation filtering, and feature scaling, evaluating multiple regularized linear models (Ridge, Lasso, ElasticNet) with cross-validation.
