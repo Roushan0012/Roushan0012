@@ -57,19 +57,19 @@
 
 ## 🚀 Featured Projects
 
-### 🧠 **[CognitRAG.ai — Enterprise PDF Hybrid RAG Intelligence Platform](https://github.com/Roushan0012/CognitRAG.ai)**
-`Python` · `Flask` · `React 18` · `FAISS` · `BM25Okapi` · `Hugging Face (MiniLM)` · `Groq LPU` · `SSE Streaming`
-- Built a **6-stage hybrid retrieval pipeline** pairing 384-dimensional FAISS dense vectors with BM25 sparse keyword search, fusing top-15 candidates via Reciprocal Rank Fusion ($k=60$) to maximize recall.
-- Optimized precision using a **MiniLM cross-encoder reranker** (narrowing 15 fused candidates to 5), resolving 300-character child chunks to 1200-character parent context blocks for factual generation.
-- Streamed low-latency answers token-by-token over **Server-Sent Events (SSE)** from a Flask REST API to a React 18 frontend with per-passage relevance scores and page-level citations.
-
----
-
 ### 🚆 **[roushan-railfreight — Railway Commodity Reservation System (Freight IRCTC)](https://github.com/Roushan0012/roushan-railfreight)**
 `Next.js 14` · `React` · `TypeScript` · `Supabase (PostgreSQL)` · `Tailwind CSS` · `Row-Level Security (RLS)` · `ACID Transactions`
 - Engineered a production-grade B2B freight slot booking platform on dedicated rail corridors with multi-tenant organization onboarding, cargo classification multipliers, and dynamic distance-based pricing.
 - Implemented transactional Postgres RPCs (`book_slot_atomic`, `cancel_booking_atomic`) with `FOR UPDATE` row-level locks on schedules, enforcing atomic capacity guarantees and zero-overselling invariants.
 - Built an interactive DFCCIL network controller operations dashboard for route scheduling, transit tracking, and automated electronic consignment receipt generation.
+
+---
+
+### 🧠 **[CognitRAG.ai — Enterprise PDF Hybrid RAG Intelligence Platform](https://github.com/Roushan0012/CognitRAG.ai)**
+`Python` · `Flask` · `React 18` · `FAISS` · `BM25Okapi` · `Hugging Face (MiniLM)` · `Groq LPU` · `SSE Streaming`
+- Built a **6-stage hybrid retrieval pipeline** pairing 384-dimensional FAISS dense vectors with BM25 sparse keyword search, fusing top-15 candidates via Reciprocal Rank Fusion ($k=60$) to maximize recall.
+- Optimized precision using a **MiniLM cross-encoder reranker** (narrowing 15 fused candidates to 5), resolving 300-character child chunks to 1200-character parent context blocks for factual generation.
+- Streamed low-latency answers token-by-token over **Server-Sent Events (SSE)** from a Flask REST API to a React 18 frontend with per-passage relevance scores and page-level citations.
 
 ---
 
