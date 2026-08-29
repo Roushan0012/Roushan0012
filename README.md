@@ -38,7 +38,7 @@
 
 - 🎓 Pursuing **B.Tech in Computer Science and Engineering** at **Indian Institute of Information Technology, Bhagalpur** (CGPA: 7.76 / 10 | 2023 – Expected May 2027).
 - 🤖 **AI/ML Engineer** specializing in Generative AI, Retrieval-Augmented Generation (RAG), and autonomous agentic LLM systems in Python.
-- 🛠️ Shipped **3 deployed AI products** and solved **700+ Data Structures & Algorithms and Competitive Programming problems**.
+- 🛠️ Shipped **production AI applications** and solved **700+ Data Structures & Algorithms and Competitive Programming problems**.
 - 💼 Former **AI Developer Intern** at **AI Ally** (Remote) — engineered conversational speech-to-JSON pipelines, LangChain tool-calling, and fault-tolerant REST integrations.
 - 🏆 **2nd Rank** at IDEA-ONE National Health Hackathon (ICMR Bhubaneswar) & **National Finalist** at AI HealthTech Grand Finale, Bharat Mandapam.
 - 📧 Reach me at: **roushan.230101106@iiitbh.ac.in** / **kashyaproushankumar@gmail.com**
@@ -55,22 +55,48 @@
 
 ---
 
-## 🚀 Projects
+## 🚀 Featured Projects
 
-**PDF RAG Intelligence Platform** | `Python, Flask, React, FAISS, BM25, Hugging Face, Groq` <sub>Jun 2026</sub> · [GitHub](https://github.com/Roushan0012)
-- Built a **6-stage hybrid retrieval pipeline** pairing 384-dimensional FAISS dense vectors with BM25 sparse search, fusing both top-15 rankings through Reciprocal Rank Fusion at $k=60$ to maximize recall.
-- Optimized ranking precision with a **MiniLM cross-encoder reranker** that narrows 15 fused candidates to 5, resolving 300-character child chunks to 1200-character parents for full generation context.
-- Streamed low-latency answers token by token over **Server-Sent Events (SSE)** from a Flask REST API to a React 18 client, exposing per-passage relevance scores and page-level citations across 8 tested backend modules.
+### 🧠 **[CognitRAG.ai — Enterprise PDF Hybrid RAG Intelligence Platform](https://github.com/Roushan0012/CognitRAG.ai)**
+`Python` · `Flask` · `React 18` · `FAISS` · `BM25Okapi` · `Hugging Face (MiniLM)` · `Groq LPU` · `SSE Streaming`
+- Built a **6-stage hybrid retrieval pipeline** pairing 384-dimensional FAISS dense vectors with BM25 sparse keyword search, fusing top-15 candidates via Reciprocal Rank Fusion ($k=60$) to maximize recall.
+- Optimized precision using a **MiniLM cross-encoder reranker** (narrowing 15 fused candidates to 5), resolving 300-character child chunks to 1200-character parent context blocks for factual generation.
+- Streamed low-latency answers token-by-token over **Server-Sent Events (SSE)** from a Flask REST API to a React 18 frontend with per-passage relevance scores and page-level citations.
 
-**Smart Agentic AI Travel Planner** | `Python, LangGraph, LangChain, FastAPI, Streamlit, Docker` <sub>Jan 2026</sub> · [GitHub](https://github.com/Roushan0012)
+---
+
+### 🚆 **[roushan-railfreight — Railway Commodity Reservation System (Freight IRCTC)](https://github.com/Roushan0012/roushan-railfreight)**
+`Next.js 14` · `React` · `TypeScript` · `Supabase (PostgreSQL)` · `Tailwind CSS` · `Row-Level Security (RLS)` · `ACID Transactions`
+- Engineered a production-grade B2B freight slot booking platform on dedicated rail corridors with multi-tenant organization onboarding, cargo classification multipliers, and dynamic distance-based pricing.
+- Implemented transactional Postgres RPCs (`book_slot_atomic`, `cancel_booking_atomic`) with `FOR UPDATE` row-level locks on schedules, enforcing atomic capacity guarantees and zero-overselling invariants.
+- Built an interactive DFCCIL network controller operations dashboard for route scheduling, transit tracking, and automated electronic consignment receipt generation.
+
+---
+
+### 🔥 **[Forest Weather Index (FWI) Prediction](https://github.com/Roushan0012/Forest_Weather_Index_Prediction)**
+`Python` · `Flask` · `Scikit-learn` · `Pandas` · `NumPy` · `Ridge/Lasso Regression` · `AWS Elastic Beanstalk`
+- Developed an end-to-end machine learning pipeline analyzing meteorological indices (FFMC, DMC, DC, ISI, BUI) from the Algerian Forest Fires dataset to predict Fire Weather Index values.
+- Conducted exploratory data analysis, correlation filtering, and feature scaling, evaluating multiple regularized linear models (Ridge, Lasso, ElasticNet) with cross-validation.
+- Packaged the inference pipeline into an interactive Flask web application and automated cloud deployment on AWS Elastic Beanstalk.
+
+---
+
+### 🗺️ **[Smart Agentic AI Travel Planner](https://github.com/Roushan0012)**
+`Python` · `LangGraph` · `LangChain` · `FastAPI` · `Streamlit` · `Docker`
 - Architected an agentic workflow on **LangGraph using a StateGraph with conditional routing**, letting one LLM node autonomously select and re-invoke 4 Python tools until a complete itinerary is produced.
 - Implemented weather, place-search, currency-conversion, and arithmetic tools via LLM tool-calling and split the system into a **FastAPI service and Streamlit client** across 8 modular Python packages.
 
-**Samadhan — AI Civic Issue Reporting Portal** | `Flask, GPT-4o Vision, React, TypeScript` <sub>Aug 2025</sub> · [GitHub](https://github.com/Roushan0012)
-- Designed a scalable Flask REST backend exposing 3 endpoints that route citizen photos to **GPT-4o Vision** and return structured JSON with issue title, category, description, and priority in a single call.
-- Constrained model output to 7 civic categories using a 3-stage normalizer and a 2-check moderation route, and shipped a **React 18 and TypeScript client** supporting 5+ languages and 3 report states.
+---
 
-**ParcelPilot — AI Operations Copilot** | `React, Next.js, FastAPI, Node.js, PostgreSQL (Supabase), LangChain` <sub>Aug 2026</sub> · [GitHub](https://github.com/Roushan0012)
+### 🏛️ **[Samadhan — AI Civic Issue Reporting Portal](https://github.com/Roushan0012)**
+`Flask` · `GPT-4o Vision` · `React` · `TypeScript` · `Multilingual NLP`
+- Designed a scalable Flask REST backend exposing 3 endpoints that route citizen photos to **GPT-4o Vision** and return structured JSON with issue title, category, description, and priority in a single call.
+- Constrained model output to 7 civic categories using a 3-stage normalizer and a 2-check moderation route, and shipped a **React 18 and TypeScript client** supporting 5+ Indian languages and 3 report states.
+
+---
+
+### 📦 **[ParcelPilot — AI Operations Copilot](https://github.com/Roushan0012)**
+`React` · `Next.js` · `FastAPI` · `Node.js` · `PostgreSQL (Supabase)` · `LangChain`
 - Built a full-stack AI agent application for real-time policy reasoning and operational queries across contracts, policies, and operational records with role-based access control.
 - Collaborated across 5+ development phases, validating modules through unit and integration testing before deployment — reducing manual lookup time for complex queries from 10 minutes to under 15 seconds (**97% improvement**).
 
